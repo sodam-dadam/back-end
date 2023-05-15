@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: sodam-dadam-database.czcfkoivbrbz.ap-northeast-2.rds.amazonaws.com
+    username: root
+    password: a6450307!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    #    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+
+logging.level:
+  org.hibernate.SQL: debug
