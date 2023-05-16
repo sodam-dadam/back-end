@@ -41,8 +41,8 @@ jobs:
     - name: Build Docker Image For Spring and push
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/sodam-dadam-server .
-        docker push ${{ secrets.DOCKER_USERNAME }}/sodam-dadam-server
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/sodam-dadam .
+        docker push ${{ secrets.DOCKER_USERNAME }}/sodam-dadam
         
     # 서버에서 Docker 이미지 실행
     - name: EC2 Docker Run
@@ -53,8 +53,8 @@ jobs:
         key: ${{ secrets.EC2_PEM_KEY }}
         port: 22
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/sodam-dadam-server:latest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/sodam-dadam:latest
           docker stop $(docker ps -a -q)
-          docker run -d --log-driver=syslog -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/sodam-dadam-server:latest
+          docker run -d --log-driver=syslog -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/sodam-dadam:latest
           docker rm $(docker ps --filter 'status=exited' -a -q)
           docker image prune -a -f
