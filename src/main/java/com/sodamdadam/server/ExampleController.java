@@ -8,7 +8,8 @@ public class ExampleController {
 
     @RequestMapping("/")
     public String index(){
-        return "sodam-dadam 프로젝트 시작!!! 이정호바보";
+        return "sodam-dadam 프로젝트 시작!!!";
     }
 
 }
+정
