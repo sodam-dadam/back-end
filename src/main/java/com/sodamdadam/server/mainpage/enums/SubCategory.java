@@ -1,4 +1,4 @@
-package com.sodamdadam.server.global.enums;
+package com.sodamdadam.server.mainpage.enums;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.Getter;
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum SubCategory {
 
-//    심리 상담 카테고리장
+//    심리 상담 카테고리
     CONSULTING_1("personalImg","개인 상담","스트레스 완화, 적응력 향상을 위한 1:1 성인상담"),
     CONSULTING_2("psychologicalTestImg","심리 검사","개인 맞춤형 심리검사를 선정하여 심층적 자기 이해"),
     CONSULTING_3("teenagerAndParentCounselingImg","청소년 & 부모상담","청소년의 적응문제 해결 및 부모역량강화"),
