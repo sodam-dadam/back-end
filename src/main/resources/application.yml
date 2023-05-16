@@ -9,11 +9,11 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     #    show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
 
 
-logging.level:
-  org.hibernate.SQL: debug
+#logging.level:
+#  org.hibernate.SQL: debug
