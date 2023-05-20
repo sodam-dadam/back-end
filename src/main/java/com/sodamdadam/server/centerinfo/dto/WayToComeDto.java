@@ -10,8 +10,9 @@ public class WayToComeDto {
     private final String wayToComeName;
     private final String wayToComeImg;
     private final String wayToComeFirstLocation;
-    private final String wayToComesecondLocation;
     private final String wayToComeSecondLocation;
+    private final String parkingInfoName;
+    private final String parkingInfoContent;
     private final String callName;
     private final String callImg;
     private final String callContent;
@@ -27,8 +28,9 @@ public class WayToComeDto {
         this.wayToComeName = "오시는 길";
         this.wayToComeImg = "../../../public/images/wayToCome.png";
         this.wayToComeFirstLocation = "MJ아이티밸리 9층 906호";
-        this.wayToComesecondLocation = "동수원 사거리 라마다 호텔과 은혜와 진리 교회 사이";
-        this.wayToComeSecondLocation = "주차정보 | 지하 3층까지 가능, 주차비는 본 기관에서 부담합니다.";
+        this.wayToComeSecondLocation = "동수원 사거리 라마다 호텔과 은혜와 진리 교회 사이";
+        this.parkingInfoName = "주차정보";
+        this.parkingInfoContent = "지하 3층까지 가능, 주차비는 본 기관에서 부담합니다.";
         this.callName = "전화 번호";
         this.callImg = "../../../public/images/call.png";
         this.callContent = "010-2331-4058";
