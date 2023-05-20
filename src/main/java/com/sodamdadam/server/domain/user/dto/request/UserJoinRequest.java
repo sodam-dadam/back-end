@@ -1,5 +1,6 @@
 package com.sodamdadam.server.domain.user.dto.request;
 
+import com.sodamdadam.server.domain.user.enums.Gender;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,12 +14,12 @@ public class UserJoinRequest {
     private String password;
     private String name;
     private String birthDate;
-    private String gender;
+    private Gender gender;
     private String email;
     private String phone;
 
     @Builder
-    public UserJoinRequest(String id, String password, String name, String birthDate, String gender,
+    public UserJoinRequest(String id, String password, String name, String birthDate, Gender gender,
                            String email, String phone) {
         this.id = id;
         this.password = password;
