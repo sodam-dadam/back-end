@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ExceptionManager {
 
     @ExceptionHandler(SodamDadamException.class)
-    public ResponseEntity<ErrorResponse> BankingExceptionHandler(SodamDadamException e) {
+    public ResponseEntity<ErrorResponse> SodamDadamExceptionHandler(SodamDadamException e) {
         return new ResponseEntity<>(
                 ErrorResponse.builder()
                         .status(e.getErrorCode().getStatus())
@@ -18,4 +18,5 @@ public class ExceptionManager {
                         .build(),
                 HttpStatus.valueOf(e.getErrorCode().getStatus()));
     }
+
 }
