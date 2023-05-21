@@ -18,12 +18,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RequiredArgsConstructor
-//@RequestMapping("/users")
+@RequestMapping("/users")
 @RestController
 public class UserController {
 
     private final UserJoinService userJoinService;
-    @PostMapping("/users/join")
+    @PostMapping("/join")
     public ResponseEntity<SuccessResponse> joinUser(@RequestBody @Valid UserJoinRequest request,
                                                     BindingResult bindingResult) {
 

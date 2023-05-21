@@ -23,7 +23,8 @@ public class SecurityConfig {
 //                .formLogin().disable()
 //                .httpBasic().disable()
 //                .headers().frameOptions().disable();
-        http.csrf().disable();
+        http.csrf().disable()
+                .csrf().disable();
         http.authorizeRequests()
                 .anyRequest()
                 .permitAll()
