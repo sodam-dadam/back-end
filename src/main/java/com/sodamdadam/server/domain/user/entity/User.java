@@ -42,7 +42,6 @@ public class User {
             message = "생년월일 형식에 맞지 않습니다.")
     private String birthDate;
 
-    @NotEmpty(message = "성별 입력은 필수 입니다.")
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
