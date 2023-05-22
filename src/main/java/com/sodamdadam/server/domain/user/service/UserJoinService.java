@@ -22,12 +22,26 @@ public class UserJoinService {
 
     @Transactional
     public ResponseEntity<SuccessResponse> setUser(UserJoinRequest request) {
+        validateUserIdNotExist(request.getId());
+        User user = createUserFromRequest(request);
+        userRepository.save(user);
 
-        userRepository.findById(request.getId()).ifPresent(user -> {
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(SuccessResponse.builder()
+                .status(HttpStatus.CREATED.value())
+                .message("UserJoin Success")
+                .build());
+    }
+
+    private void validateUserIdNotExist(String id) {
+        if (userRepository.findById(id).isPresent()) {
             throw new SodamDadamException(ErrorCode.ALREADY_ID_EXIST);
-        });
+        }
+    }
 
-        userRepository.save(User.builder()
+    private User createUserFromRequest(UserJoinRequest request) {
+        return User.builder()
                 .id(request.getId())
                 .password(bCryptPasswordEncoder.encode(request.getPassword()))
                 .name(request.getName())
@@ -35,15 +49,6 @@ public class UserJoinService {
                 .gender(request.getGender())
                 .email(request.getEmail())
                 .phone(request.getPhone())
-                .build());
-
-        return new ResponseEntity<>(
-                SuccessResponse.builder()
-                        .status(HttpStatus.CREATED.value())
-                        .message("UserJoin Success")
-                        .build(),
-                HttpStatus.valueOf(HttpStatus.CREATED.value())
-        );
-
+                .build();
     }
 }
