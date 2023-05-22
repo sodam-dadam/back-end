@@ -9,6 +9,10 @@ import lombok.Getter;
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ErrorCode {
 
+    // 401
+    INVALID_JWT(401, "Invalid Jwt"),
+    EXPIRED_JWT(401, "Expired Jwt"),
+
     // 409
     ALREADY_ID_EXIST(409, "Already Id Exist");
 
