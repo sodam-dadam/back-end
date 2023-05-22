@@ -1,14 +1,14 @@
 package com.sodamdadam.server.domain.user.dto.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
-@AllArgsConstructor
-@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserLoginResponse {
 
     private String AccessToken;
 
+    public UserLoginResponse(String accessToken) {
+        AccessToken = accessToken;
+    }
 }
