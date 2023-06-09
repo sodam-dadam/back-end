@@ -1,6 +1,7 @@
 package com.sodamdadam.server.centerinfo.controller;
 
 import com.sodamdadam.server.centerinfo.service.IntroductionService;
+import com.sodamdadam.server.centerinfo.service.ReservationInfoService;
 import com.sodamdadam.server.centerinfo.service.WayToComeService;
 import com.sodamdadam.server.global.dto.response.CommonResponse;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ public class CenterInfoController {
 
     private final WayToComeService wayToComeService;
     private final IntroductionService introductionService;
+    private final ReservationInfoService reservationInfoService;
 
     @GetMapping("/waytocome")
 
@@ -26,5 +28,10 @@ public class CenterInfoController {
     @GetMapping("/introduction")
     public ResponseEntity<CommonResponse> introductionData() {
         return introductionService.introductionData();
+    }
+
+    @GetMapping("/reservation")
+    public ResponseEntity<CommonResponse> reservationData() {
+        return reservationInfoService.reservationInfoData();
     }
 }
