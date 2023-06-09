@@ -1,5 +1,6 @@
 package com.sodamdadam.server.centerinfo.controller;
 
+import com.sodamdadam.server.centerinfo.service.IntroductionService;
 import com.sodamdadam.server.centerinfo.service.WayToComeService;
 import com.sodamdadam.server.global.dto.response.CommonResponse;
 import lombok.RequiredArgsConstructor;
@@ -14,9 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class CenterInfoController {
 
     private final WayToComeService wayToComeService;
+    private final IntroductionService introductionService;
 
     @GetMapping("/waytocome")
-    public ResponseEntity<CommonResponse> watToComeData(){
+
+    public ResponseEntity<CommonResponse> watToComeData() {
         return wayToComeService.watToComeData();
+    }
+
+    @GetMapping("/introduction")
+    public ResponseEntity<CommonResponse> introductionData() {
+        return introductionService.introductionData();
     }
 }
