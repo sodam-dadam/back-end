@@ -7,6 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class SendMainPageDataDto<T> {
 
+    private T mainHeader;
     private T consulting;
     private T education;
 }
