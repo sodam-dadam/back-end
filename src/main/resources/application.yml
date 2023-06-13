@@ -18,10 +18,6 @@ spring:
 
   data:
     redis:
-      host: 3.39.120.178 # 로컬에서 테스트 할 때는 localhost로 사용
+      host: redis #3.39.120.178 # 로컬에서 테스트 할 때는 localhost로 사용
       port: 6379
       password: a6450307
-
-
-#logging.level:
-#  org.hibernate.SQL: debug
