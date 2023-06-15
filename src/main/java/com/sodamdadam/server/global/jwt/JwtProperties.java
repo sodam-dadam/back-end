@@ -8,6 +8,7 @@ public interface JwtProperties {
     Long REFRESH_EXPIRATION_TIME = 5 * 60 * 1000L; //5분
 
     String TOKEN_PREFIX = "Bearer ";
-    String HEADER = "Authorization";
+    String HEADER_ACCESS = "Authorization_Access";
+    String HEADER_REFRESH = "Authorization_Refresh";
 
 }
