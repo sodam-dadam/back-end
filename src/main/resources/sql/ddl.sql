@@ -10,3 +10,12 @@ CREATE TABLE tbl_user (
                           PRIMARY KEY(user_id)
 );
 
+CREATE TABLE tbl_noticepost (
+                          notice_id        BIGINT AUTO_INCREMENT,
+                          title             VARCHAR(255),
+                          writer     VARCHAR(255),
+                          content    VARCHAR(255),
+                          notice_date   date,
+                          view    BIGINT DEFAULT 0,
+                          PRIMARY KEY(notice_id)
+);
