@@ -1,6 +1,5 @@
 package com.sodamdadam.server.domain.noticepost.entity;
 
-import com.sodamdadam.server.domain.user.enums.Gender;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -30,14 +29,17 @@ public class NoticePost {
     @Temporal(TemporalType.DATE)
     private Date notiecDate;
 
-    private Long view;
+    private Long view = 0L;
 
     @Builder
-    public NoticePost(String title, String writer, String content, Date notiecDate, Long view) {
+    public NoticePost(String title, String writer, String content, Date notiecDate) {
         this.title = title;
         this.writer = writer;
         this.content = content;
         this.notiecDate = notiecDate;
-        this.view = view;
+    }
+
+    public void addView() {
+        this.view += 1;
     }
 }
