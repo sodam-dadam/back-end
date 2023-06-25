@@ -3,6 +3,7 @@ package com.sodamdadam.server.domain.noticepost.controller;
 import com.sodamdadam.server.domain.noticepost.dto.request.NoticePostRegisterRequest;
 import com.sodamdadam.server.domain.noticepost.service.NoticePostFindAllService;
 import com.sodamdadam.server.domain.noticepost.service.NoticePostRegisterService;
+import com.sodamdadam.server.domain.noticepost.service.NoticePostSearchService;
 import com.sodamdadam.server.global.dto.response.CommonResponse;
 import com.sodamdadam.server.global.dto.response.SuccessResponse;
 import com.sodamdadam.server.global.exception.ValidationException;
@@ -26,6 +27,7 @@ public class NoticePostController {
 
     private final NoticePostRegisterService noticePostRegisterService;
     private final NoticePostFindAllService noticePostFindAllService;
+    private final NoticePostSearchService noticePostSearchService;
 
     @PostMapping("/register")
     public ResponseEntity<SuccessResponse> setNoticePost(@RequestBody @Valid NoticePostRegisterRequest request,
@@ -44,7 +46,12 @@ public class NoticePostController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<CommonResponse> getNoticePost(@PageableDefault(size = 10) Pageable pageable) {
+    public ResponseEntity<CommonResponse> getNoticePosts(@PageableDefault(size = 10) Pageable pageable) {
         return noticePostFindAllService.getNoticePosts(pageable);
+    }
+
+    @GetMapping("/search/{id}")
+    public ResponseEntity<CommonResponse> getNoticePost(@PathVariable Long id) {
+        return noticePostSearchService.getNoticePost(id);
     }
 }
