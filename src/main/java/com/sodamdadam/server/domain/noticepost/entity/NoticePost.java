@@ -27,16 +27,16 @@ public class NoticePost {
 
     @Column(name = "notice_date")
     @Temporal(TemporalType.DATE)
-    private Date notiecDate;
+    private Date noticeDate;
 
     private Long view = 0L;
 
     @Builder
-    public NoticePost(String title, String writer, String content, Date notiecDate) {
+    public NoticePost(String title, String writer, String content, Date noticeDate) {
         this.title = title;
         this.writer = writer;
         this.content = content;
-        this.notiecDate = notiecDate;
+        this.noticeDate = noticeDate;
     }
 
     public void addView() {
