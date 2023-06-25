@@ -38,7 +38,7 @@ public class NoticePostRegisterService {
                 .title(request.getTitle())
                 .writer(request.getWriter())
                 .content(request.getContent())
-                .notiecDate(new Date())
+                .noticeDate(new Date())
                 .build();
     }
 }
