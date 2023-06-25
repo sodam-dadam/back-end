@@ -11,6 +11,7 @@ public enum ErrorCode {
 
     // 400
     USER_NOT_FOUND(404, "User Not Found"),
+    NOTICEPOST_NOT_FOUND(404,"Notice Post Not Found"),
 
     // 401
     INVALID_JWT(401, "Invalid Jwt"),
