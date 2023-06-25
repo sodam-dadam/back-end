@@ -28,7 +28,7 @@ public class NoticePostSearchService {
         return new ResponseEntity<>(
                 CommonResponse.builder()
                         .status(HttpStatus.OK.value())
-                        .message("NoticePost Response Data Success")
+                        .message("NoticePost content Data Success")
                         .data(findNoticePost.getContent())
                         .build(),
                 HttpStatus.valueOf(HttpStatus.OK.value())
