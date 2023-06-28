@@ -14,7 +14,7 @@ public class MainPageController {
     private final MainPageService mainPageService;
 
     @GetMapping("/")
-    public ResponseEntity<CommonResponse> sendData() {
-        return mainPageService.sendData();
+    public ResponseEntity<CommonResponse> getData() {
+        return mainPageService.getData();
     }
 }
