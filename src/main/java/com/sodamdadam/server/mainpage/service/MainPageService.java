@@ -39,7 +39,7 @@ public class MainPageService {
         response = new SendMainPageDataDto<>(mainHeaderList,consultingList, educationList);
     }
 
-    public ResponseEntity<CommonResponse> sendData(){
+    public ResponseEntity<CommonResponse> getData(){
 
         return new ResponseEntity<>(
                 CommonResponse.builder()
