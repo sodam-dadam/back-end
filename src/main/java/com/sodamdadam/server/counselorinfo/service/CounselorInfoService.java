@@ -15,20 +15,8 @@ public class CounselorInfoService {
 
     private final CounselorInfoRepository counselorInfoRepository;
 
-    private CounselorInfoDto getCounselorInfo() {
+    public CounselorInfoDto getCounselorInfo() {
         return counselorInfoRepository.getCounselorInfo();
     }
 
-    public ResponseEntity<CommonResponse> getCounselorInfoResponse() {
-        CounselorInfoDto responseDto = getCounselorInfo();
-
-        return new ResponseEntity<>(
-                CommonResponse.builder()
-                        .status(HttpStatus.OK.value())
-                        .message("CounselorInfo Response Data Success")
-                        .data(responseDto)
-                        .build(),
-                HttpStatus.valueOf(HttpStatus.OK.value())
-        );
-    }
 }
