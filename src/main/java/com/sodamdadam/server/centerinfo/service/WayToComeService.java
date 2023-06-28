@@ -9,22 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class WayToComeService {
 
-    private final WayToComeDto wayToComeDto;
-
-    public WayToComeService() {
-        this.wayToComeDto = new WayToComeDto();
+    public WayToComeDto getWayToComeDto() {
+        return new WayToComeDto();
     }
 
-    public ResponseEntity<CommonResponse> watToComeData(){
-
-        return new ResponseEntity<>(
-                CommonResponse.builder()
-                        .status(HttpStatus.OK.value())
-                        .message("WayToCome Response Data Success")
-                        .data(wayToComeDto)
-                        .build(),
-                HttpStatus.valueOf(HttpStatus.OK.value())
-        );
-
-    }
 }
