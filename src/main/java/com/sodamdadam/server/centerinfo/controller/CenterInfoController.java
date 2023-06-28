@@ -1,5 +1,6 @@
 package com.sodamdadam.server.centerinfo.controller;
 
+import com.sodamdadam.server.centerinfo.dto.IntroductionDto;
 import com.sodamdadam.server.centerinfo.dto.ReservationInfoDto;
 import com.sodamdadam.server.centerinfo.dto.WayToComeDto;
 import com.sodamdadam.server.centerinfo.service.IntroductionService;
@@ -38,7 +39,16 @@ public class CenterInfoController {
 
     @GetMapping("/introduction")
     public ResponseEntity<CommonResponse> introductionData() {
-        return introductionService.introductionData();
+        IntroductionDto responseDto = introductionService.getIntroduction();
+
+        return new ResponseEntity<>(
+                CommonResponse.builder()
+                        .status(HttpStatus.OK.value())
+                        .message("Introduction Response Data Success")
+                        .data(responseDto)
+                        .build(),
+                HttpStatus.valueOf(HttpStatus.OK.value())
+        );
     }
 
     @GetMapping("/reservation")
