@@ -33,6 +33,18 @@ public class EducationInfoRepositoryImpl implements EducationInfoRepository{
 
     }
 
+    private EducationInfoDto createBookReadingEducationInfo() {
+        List<String> mainText = Arrays.asList("자신을 돌보는 북리딩 프로그램");
+        String imgUrl1 = "../../../public/images/centerImg2.jpeg";
+        String imgUrl2 = "../../../public/images/centerImg2.jpeg";
+        List<String> subText1 = Arrays.asList("책을 통해 내면의 성장을 돕는", "소규모 세미나 형식으로 진행됩니다.");
+        List<String> subText2 = Arrays.asList("소담다담은 자신을 돌보는 북리딩 프로그램을 통해", "책을 매개로 서로의 생각이나 느낌을 나누고 내면의 세계를",
+                "깊고, 넒게 확장시켜 나가고자 합니다.");
+
+        return new EducationInfoDto(mainText, imgUrl1, imgUrl2, subText1, subText2);
+
+    }
+
     @Override
     public EducationInfoDto getWorkShopEducationInfo() {
         return createWorkShopEducationInfo();
@@ -41,5 +53,10 @@ public class EducationInfoRepositoryImpl implements EducationInfoRepository{
     @Override
     public EducationInfoDto getCounselorEducationInfo() {
         return createCounselorEducationInfo();
+    }
+
+    @Override
+    public EducationInfoDto getBookReadingEducationInfo() {
+        return createBookReadingEducationInfo();
     }
 }
