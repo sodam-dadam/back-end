@@ -7,4 +7,7 @@ public interface CounselingInfoRepository {
     CounselingInfoDto getPersonalCounselingInfo();
 
     CounselingInfoDto getGroupCounselingInfo();
+
+    CounselingInfoDto getPsychologicalCounselingInfo();
+
 }
