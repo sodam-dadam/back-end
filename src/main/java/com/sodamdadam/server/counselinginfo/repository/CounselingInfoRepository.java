@@ -10,4 +10,5 @@ public interface CounselingInfoRepository {
 
     CounselingInfoDto getPsychologicalCounselingInfo();
 
+    CounselingInfoDto getAdolescentsParentsCounselingInfo();
 }
