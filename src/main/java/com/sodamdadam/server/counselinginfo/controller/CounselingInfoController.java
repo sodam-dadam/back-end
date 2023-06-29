@@ -66,7 +66,7 @@ public class CounselingInfoController {
         return new ResponseEntity<>(
                 CommonResponse.builder()
                         .status(HttpStatus.OK.value())
-                        .message("PsychologicalCounselingInfo Response Data Success")
+                        .message("AdolescentsParentsCounselingInfo Response Data Success")
                         .data(responseDto)
                         .build(),
                 HttpStatus.valueOf(HttpStatus.OK.value())
