@@ -31,6 +31,17 @@ public class CounselingInfoRepositoryImpl implements CounselingInfoRepository{
         return new CounselingInfoDto(mainText, imgUrl1, imgUrl2, subText1, subText2);
     }
 
+    private CounselingInfoDto createPsychologicalCounselingInfo() {
+        List<String> mainText = Arrays.asList("검사를 통해 다양한 심리적 특성에 대해 ', '파악하고 이를 통해 자신의 스토리를 찾는 심리검사");
+        String imgUrl1 = "../../../public/images/centerImg2.jpeg";
+        String imgUrl2 = "../../../public/images/centerImg2.jpeg";
+        List<String> subText1 = Arrays.asList("개인 맞춤형 심리검사를", "선정하여 심층적인 자기 이해를 돕습니다.");
+        List<String> subText2 = Arrays.asList("소담다담은 검사를 통해 다양한 심리적", "특성에 대해 파악하고 이를 통해 자신의 스토리를 찾아드립니다.",
+                "이를 통해 개인의 성향이나 향후 행동을 예측하는데", "도움을 얻을 수 있어 일상생활의 다양한 부분에서", "사용되고 있습니다.");
+
+        return new CounselingInfoDto(mainText, imgUrl1, imgUrl2, subText1, subText2);
+    }
+
     @Override
     public CounselingInfoDto getPersonalCounselingInfo() {
         return createPersonalCounselingInfo();
@@ -39,6 +50,11 @@ public class CounselingInfoRepositoryImpl implements CounselingInfoRepository{
     @Override
     public CounselingInfoDto getGroupCounselingInfo() {
         return createGroupCounselingInfo();
+    }
+
+    @Override
+    public CounselingInfoDto getPsychologicalCounselingInfo() {
+        return createPsychologicalCounselingInfo();
     }
 
 }
