@@ -14,4 +14,8 @@ public class EducationInfoService {
     public EducationInfoDto getWorkShopEducationInfo() {
         return educationInfoRepository.getWorkShopEducationInfo();
     }
+
+    public EducationInfoDto getCounselorEducationInfo() {
+        return educationInfoRepository.getCounselorEducationInfo();
+    }
 }
