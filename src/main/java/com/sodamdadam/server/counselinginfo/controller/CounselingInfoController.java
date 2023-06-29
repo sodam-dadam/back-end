@@ -30,4 +30,18 @@ public class CounselingInfoController {
                 HttpStatus.valueOf(HttpStatus.OK.value())
         );
     }
+
+    @GetMapping("/group")
+    public ResponseEntity<CommonResponse> getGroupCounselingInfo() {
+        CounselingInfoDto responseDto = counselingInfoRepository.getGroupCounselingInfo();
+
+        return new ResponseEntity<>(
+                CommonResponse.builder()
+                        .status(HttpStatus.OK.value())
+                        .message("GroupCounselingInfo Response Data Success")
+                        .data(responseDto)
+                        .build(),
+                HttpStatus.valueOf(HttpStatus.OK.value())
+        );
+    }
 }
