@@ -18,4 +18,8 @@ public class EducationInfoService {
     public EducationInfoDto getCounselorEducationInfo() {
         return educationInfoRepository.getCounselorEducationInfo();
     }
+
+    public EducationInfoDto getBookReadingEducationInfo() {
+        return educationInfoRepository.getBookReadingEducationInfo();
+    }
 }
