@@ -21,8 +21,25 @@ public class EducationInfoRepositoryImpl implements EducationInfoRepository{
 
     }
 
+    private EducationInfoDto createCounselorEducationInfo() {
+        List<String> mainText = Arrays.asList("훈련과정에 있는 상담자들의", "성장에 도움이 되는 상담자 교육");
+        String imgUrl1 = "../../../public/images/centerImg2.jpeg";
+        String imgUrl2 = "../../../public/images/centerImg2.jpeg";
+        List<String> subText1 = Arrays.asList("상담 전문가 양성을 위한 교육 프로그램으로", "슈퍼비전과 공개사례발표를 진행합니다.");
+        List<String> subText2 = Arrays.asList("소담다담은 훈련과정에 있는 상담자들의", "개인적, 전문적 성장에 도움이 되는 교육 활동, 교육분석 등의",
+                "체계적인 교육을 제공합니다.");
+
+        return new EducationInfoDto(mainText, imgUrl1, imgUrl2, subText1, subText2);
+
+    }
+
     @Override
     public EducationInfoDto getWorkShopEducationInfo() {
         return createWorkShopEducationInfo();
+    }
+
+    @Override
+    public EducationInfoDto getCounselorEducationInfo() {
+        return createCounselorEducationInfo();
     }
 }
