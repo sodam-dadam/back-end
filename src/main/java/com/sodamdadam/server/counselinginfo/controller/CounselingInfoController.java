@@ -1,6 +1,6 @@
 package com.sodamdadam.server.counselinginfo.controller;
 
-import com.sodamdadam.server.counselinginfo.dto.response.PersonalCounselingInfoDto;
+import com.sodamdadam.server.counselinginfo.dto.response.CounselingInfoDto;
 import com.sodamdadam.server.counselinginfo.repository.CounselingInfoRepository;
 import com.sodamdadam.server.global.dto.response.CommonResponse;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ public class CounselingInfoController {
 
     @GetMapping("/personal")
     public ResponseEntity<CommonResponse> getPersonalCounselingInfo() {
-        PersonalCounselingInfoDto responseDto = counselingInfoRepository.getPersonalCounselingInfo();
+        CounselingInfoDto responseDto = counselingInfoRepository.getPersonalCounselingInfo();
 
         return new ResponseEntity<>(
                 CommonResponse.builder()

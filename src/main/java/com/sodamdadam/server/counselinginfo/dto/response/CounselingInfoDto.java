@@ -7,7 +7,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public class PersonalCounselingInfoDto {
+public class CounselingInfoDto {
 
     private List<String> mainText;
     private String imgUrl1;
