@@ -44,4 +44,18 @@ public class CounselingInfoController {
                 HttpStatus.valueOf(HttpStatus.OK.value())
         );
     }
+
+    @GetMapping("/psychologicaltest")
+    public ResponseEntity<CommonResponse> getPsychologicalCounselingInfo() {
+        CounselingInfoDto responseDto = counselingInfoRepository.getPsychologicalCounselingInfo();
+
+        return new ResponseEntity<>(
+                CommonResponse.builder()
+                        .status(HttpStatus.OK.value())
+                        .message("PsychologicalCounselingInfo Response Data Success")
+                        .data(responseDto)
+                        .build(),
+                HttpStatus.valueOf(HttpStatus.OK.value())
+        );
+    }
 }
