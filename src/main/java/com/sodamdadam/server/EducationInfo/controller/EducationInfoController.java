@@ -44,4 +44,18 @@ public class EducationInfoController {
                 HttpStatus.valueOf(HttpStatus.OK.value())
         );
     }
+
+    @GetMapping("/bookreading")
+    public ResponseEntity<CommonResponse> getBookReadingEducationInfo() {
+        EducationInfoDto responseDto = educationInfoService.getBookReadingEducationInfo();
+
+        return new ResponseEntity<>(
+                CommonResponse.builder()
+                        .status(HttpStatus.OK.value())
+                        .message("BookReadingEducationInfo Response Data Success")
+                        .data(responseDto)
+                        .build(),
+                HttpStatus.valueOf(HttpStatus.OK.value())
+        );
+    }
 }
