@@ -59,14 +59,14 @@ public class CounselingInfoController {
         );
     }
 
-    @GetMapping("/adolescentsparents")
-    public ResponseEntity<CommonResponse> getAdolescentsParentsCounselingInfo() {
-        CounselingInfoDto responseDto = counselingInfoRepository.getAdolescentsParentsCounselingInfo();
+    @GetMapping("/couple")
+    public ResponseEntity<CommonResponse> getCoupleCounselingInfo() {
+        CounselingInfoDto responseDto = counselingInfoRepository.getCoupleCounselingInfo();
 
         return new ResponseEntity<>(
                 CommonResponse.builder()
                         .status(HttpStatus.OK.value())
-                        .message("AdolescentsParentsCounselingInfo Response Data Success")
+                        .message("CoupleCounselingInfo Response Data Success")
                         .data(responseDto)
                         .build(),
                 HttpStatus.valueOf(HttpStatus.OK.value())
