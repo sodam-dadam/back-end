@@ -2,6 +2,8 @@ package com.sodamdadam.server.counselinginfo.controller;
 
 import com.sodamdadam.server.counselinginfo.dto.response.CounselingInfoDto;
 import com.sodamdadam.server.counselinginfo.repository.CounselingInfoRepository;
+import com.sodamdadam.server.counselinginfo.service.CounselingInfoService;
+import com.sodamdadam.server.counselorinfo.service.CounselorInfoService;
 import com.sodamdadam.server.global.dto.response.CommonResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CounselingInfoController {
 
-    private final CounselingInfoRepository counselingInfoRepository;
+    private final CounselingInfoService counselingInfoService;
 
     @GetMapping("/personal")
     public ResponseEntity<CommonResponse> getPersonalCounselingInfo() {
-        CounselingInfoDto responseDto = counselingInfoRepository.getPersonalCounselingInfo();
+        CounselingInfoDto responseDto = counselingInfoService.getPersonalCounselingInfo();
 
         return new ResponseEntity<>(
                 CommonResponse.builder()
@@ -33,7 +35,7 @@ public class CounselingInfoController {
 
     @GetMapping("/group")
     public ResponseEntity<CommonResponse> getGroupCounselingInfo() {
-        CounselingInfoDto responseDto = counselingInfoRepository.getGroupCounselingInfo();
+        CounselingInfoDto responseDto = counselingInfoService.getGroupCounselingInfo();
 
         return new ResponseEntity<>(
                 CommonResponse.builder()
@@ -47,7 +49,7 @@ public class CounselingInfoController {
 
     @GetMapping("/psychologicaltest")
     public ResponseEntity<CommonResponse> getPsychologicalCounselingInfo() {
-        CounselingInfoDto responseDto = counselingInfoRepository.getPsychologicalCounselingInfo();
+        CounselingInfoDto responseDto = counselingInfoService.getPsychologicalCounselingInfo();
 
         return new ResponseEntity<>(
                 CommonResponse.builder()
@@ -59,9 +61,23 @@ public class CounselingInfoController {
         );
     }
 
+    @GetMapping("/adolescentsparents")
+    public ResponseEntity<CommonResponse> getAdolescentsParentsCounselingInfo() {
+        CounselingInfoDto responseDto = counselingInfoService.getAdolescentsParentsCounselingInfo();
+
+        return new ResponseEntity<>(
+                CommonResponse.builder()
+                        .status(HttpStatus.OK.value())
+                        .message("AdolescentsParentsCounselingInfo Response Data Success")
+                        .data(responseDto)
+                        .build(),
+                HttpStatus.valueOf(HttpStatus.OK.value())
+        );
+    }
+
     @GetMapping("/couple")
     public ResponseEntity<CommonResponse> getCoupleCounselingInfo() {
-        CounselingInfoDto responseDto = counselingInfoRepository.getCoupleCounselingInfo();
+        CounselingInfoDto responseDto = counselingInfoService.getCoupleCounselingInfo();
 
         return new ResponseEntity<>(
                 CommonResponse.builder()
