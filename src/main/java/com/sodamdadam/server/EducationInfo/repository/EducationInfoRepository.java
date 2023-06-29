@@ -7,4 +7,6 @@ public interface EducationInfoRepository {
     EducationInfoDto getWorkShopEducationInfo();
 
     EducationInfoDto getCounselorEducationInfo();
+
+    EducationInfoDto getBookReadingEducationInfo();
 }
