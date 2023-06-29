@@ -5,4 +5,6 @@ import com.sodamdadam.server.EducationInfo.dto.response.EducationInfoDto;
 public interface EducationInfoRepository {
 
     EducationInfoDto getWorkShopEducationInfo();
+
+    EducationInfoDto getCounselorEducationInfo();
 }
