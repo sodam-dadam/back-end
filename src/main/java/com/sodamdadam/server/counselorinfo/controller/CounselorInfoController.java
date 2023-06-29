@@ -17,7 +17,7 @@ public class CounselorInfoController {
 
     private final CounselorInfoService counselorInfoService;
 
-    @GetMapping("/1")
+    @GetMapping("/counselors")
     public ResponseEntity<CommonResponse> getCounselorInfo() {
         CounselorInfoDto responseDto = counselorInfoService.getCounselorInfo();
 
