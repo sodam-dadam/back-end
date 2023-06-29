@@ -30,4 +30,18 @@ public class EducationInfoController {
                 HttpStatus.valueOf(HttpStatus.OK.value())
         );
     }
+
+    @GetMapping("/counselors")
+    public ResponseEntity<CommonResponse> getCounselorEducationInfo() {
+        EducationInfoDto responseDto = educationInfoService.getCounselorEducationInfo();
+
+        return new ResponseEntity<>(
+                CommonResponse.builder()
+                        .status(HttpStatus.OK.value())
+                        .message("CounselorEducationInfo Response Data Success")
+                        .data(responseDto)
+                        .build(),
+                HttpStatus.valueOf(HttpStatus.OK.value())
+        );
+    }
 }
