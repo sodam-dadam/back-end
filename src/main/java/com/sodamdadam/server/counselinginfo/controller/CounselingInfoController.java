@@ -1,9 +1,7 @@
 package com.sodamdadam.server.counselinginfo.controller;
 
 import com.sodamdadam.server.counselinginfo.dto.response.CounselingInfoDto;
-import com.sodamdadam.server.counselinginfo.repository.CounselingInfoRepository;
 import com.sodamdadam.server.counselinginfo.service.CounselingInfoService;
-import com.sodamdadam.server.counselorinfo.service.CounselorInfoService;
 import com.sodamdadam.server.global.dto.response.CommonResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,7 +17,7 @@ public class CounselingInfoController {
 
     private final CounselingInfoService counselingInfoService;
 
-    @GetMapping("/personal")
+    @GetMapping("/individuals")
     public ResponseEntity<CommonResponse> getPersonalCounselingInfo() {
         CounselingInfoDto responseDto = counselingInfoService.getPersonalCounselingInfo();
 
@@ -33,7 +31,7 @@ public class CounselingInfoController {
         );
     }
 
-    @GetMapping("/group")
+    @GetMapping("/groups")
     public ResponseEntity<CommonResponse> getGroupCounselingInfo() {
         CounselingInfoDto responseDto = counselingInfoService.getGroupCounselingInfo();
 
@@ -47,7 +45,7 @@ public class CounselingInfoController {
         );
     }
 
-    @GetMapping("/psychologicaltest")
+    @GetMapping("/psychologicaltests")
     public ResponseEntity<CommonResponse> getPsychologicalCounselingInfo() {
         CounselingInfoDto responseDto = counselingInfoService.getPsychologicalCounselingInfo();
 
@@ -75,7 +73,7 @@ public class CounselingInfoController {
         );
     }
 
-    @GetMapping("/couple")
+    @GetMapping("/couples")
     public ResponseEntity<CommonResponse> getCoupleCounselingInfo() {
         CounselingInfoDto responseDto = counselingInfoService.getCoupleCounselingInfo();
 
