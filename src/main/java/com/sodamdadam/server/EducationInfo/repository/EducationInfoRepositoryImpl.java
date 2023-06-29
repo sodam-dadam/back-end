@@ -1,7 +1,6 @@
 package com.sodamdadam.server.EducationInfo.repository;
 
 import com.sodamdadam.server.EducationInfo.dto.response.EducationInfoDto;
-import com.sodamdadam.server.counselinginfo.dto.response.CounselingInfoDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
